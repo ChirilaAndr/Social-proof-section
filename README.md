@@ -21,7 +21,7 @@ Users should be able to:
 - Grid
 - Mobile-first workflow
 
-### Screenshot
+### Screenshot of the solution
 
 ![Screenshot](./screenshot.png)
 
