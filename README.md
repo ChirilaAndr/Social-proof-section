@@ -23,11 +23,11 @@ Users should be able to:
 
 ### Screenshot
 
-(./screenshot.png)
+![Screenshot](./screenshot.png)
 
 ### Live Site
 
-- Live Site URL: (https://your-live-site-url.com)
+- Live Site URL: (https://chirilaandr.github.io/Social-proof-section/)
 
 
 ## Author
