@@ -1,0 +1,283 @@
+:root{
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);    
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+/* ===========
+   1. Contents
+   ===========
+   
+    1. Mobile View < 576px
+        1.1 Title & Subtitle Text
+        1.2 Ratings
+        1.3 Testimonials
+    2. Tablet View < 1024px
+        2.1 Ratings
+        2.2 Testimonials
+    3. Laptop view < 1200px
+        3.1 Title & Subtitle Text
+        3.2 Ratings
+        3.3 Testimonials
+    4. Desktop View > 1200px
+*/
+
+
+
+/* ======================
+   1. Mobile view < 576px
+   ====================== */
+
+    body{
+        font-family: 'Spartan', sans-serif;
+        padding:50px 20px;
+        line-height: 1.5;   
+        background-image: url(../images/bg-pattern-top-mobile.svg),
+                        url(../images/bg-pattern-bottom-mobile.svg);
+        background-position: top left, bottom right;
+        background-repeat: no-repeat;
+        background-size: 100%;   
+    }
+
+    /* ======================
+    1.1 Title & Subtitle Text
+    =========================*/
+
+    .title{
+        color: var(--very-dark-magenta);
+        font-size:30px;
+        font-weight: 700;
+        margin: 0 auto;
+        max-width:12ch;
+        margin-bottom:30px;
+        text-align:center;
+    }
+
+    .subtitle{
+        margin:0 auto;
+        text-align:center;
+        color: var(--very-dark-magenta);
+        font-weight: 400;
+        font-size:15px;
+        max-width:27ch;
+        margin-bottom:30px;
+    }
+
+    /* ========
+    1.2 Ratings
+    =========== */
+
+    .rating{
+        padding: 15px;
+        background-color: var(--light-grayish-magenta);
+        border-radius:5px;
+        width:100%;
+        color:var(--very-dark-magenta);
+        font-weight: bold;
+        font-size:15px;
+        text-align: center;
+        max-width: 400px;
+        margin: 20px auto;
+    }
+
+    .five-stars{
+        margin-bottom:5px;
+    }
+
+    .rating-star{
+        margin:0 5px;
+    }
+
+    /* =============
+    1.3 Testimonials
+    ================ */
+        
+    .testimonial-container{
+        margin: 50px 0;
+    }
+
+    .testimonial{
+        background-color:var(--very-dark-magenta);
+        padding:30px;
+        border-radius:5px;
+        color:white;
+        margin: 15px auto;
+        font-size:13px;
+        max-width: 400px;
+    }
+
+    .person{
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .person img{
+        border-radius:50%;
+        width:40px;
+        height:40px;
+        margin-right: 20px;
+    }
+
+    .name{
+        font-weight:bold;
+        font-size:15px;
+    }
+
+    .status{
+        color:var(--soft-pink);
+    }
+
+    .testimonial-text{
+        margin-top:30px;
+    }
+
+/* =======================
+   2. Tablet view < 1024px
+   ======================= */
+
+@media only screen and (min-width: 576px) {
+
+    body{
+        background-image: url(../images/bg-pattern-top-desktop.svg),
+        url(../images/bg-pattern-bottom-desktop.svg);
+        background-position: top left, bottom right;
+        background-repeat: no-repeat;
+        background-size: max(40%, 400px), max(75%, 400px);   
+    }
+
+    /* ========
+    2.1 Ratings
+    =========== */
+
+    .rating{
+        max-width: 750px;
+        display:flex;
+        justify-content: center;
+        align-items:center;
+    }
+
+    /* =============
+    2.2 Testimonials
+    ================ */
+
+    .stars{
+        margin: 0 30px;
+    }
+
+    .testimonial{
+        max-width: 800px;
+    }
+
+}
+
+/* =======================
+   3. Laptop view < 1200px
+   ======================= */
+
+@media only screen and (min-width: 1024px) {
+
+    body{
+        padding:50px;
+    }
+
+    .container{
+        display:grid;
+        gap: 15px 30px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "title ratings"
+            "testimonials testimonials";
+        max-width:1200px;
+        margin: 0 auto;
+    }
+
+   /* =========================
+      3.1 Title & Subtitle Text
+      ========================= */
+
+    .product-text{
+        grid-area:title;
+    }
+
+    .title{
+        font-size:50px;
+        margin:15px 0;
+        text-align: left;
+    }
+
+    .subtitle{
+        text-align:left;
+        max-width:38ch;
+        margin:0;
+    }
+
+    /* =========
+     3.2 Ratings
+     =========== */
+
+    .rating-container{
+        grid-area: ratings;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rating:first-of-type{
+        align-self:flex-start;
+    }
+
+    .rating:last-of-type{
+        align-self:flex-end;
+    }
+
+    .rating{
+        margin:20px 0;
+        justify-content: flex-start;
+        max-width:500px;
+    }
+
+    .stars{
+        max-width: 100px;
+    }
+    
+
+    /* ==============
+     3.3 Testimonials
+     ================ */
+
+    .testimonial-container{
+        grid-area: testimonials;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .testimonial{
+        max-width: 32ch;
+        margin:0;
+    }
+    
+    .testimonial:nth-of-type(2){
+        transform: translateY(25px);
+        margin: 0px 20px;
+    }
+
+    .testimonial:nth-of-type(3){
+        transform: translateY(50px);
+    }
+}
+
+/* ========================
+   4. Desktop view > 1200px
+   ======================== */
+
+@media only screen and (min-width: 1200px) {
+
+  .stars{
+    max-width: 300px;
+  }
+
+}
